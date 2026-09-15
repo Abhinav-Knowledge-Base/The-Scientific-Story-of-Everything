@@ -5,7 +5,7 @@
 
 A grand, continuous science storytelling project: one causal chain from the early universe to galaxies, stars, planets, Earth, life, evolution, humans, civilization, science, technology — and the open questions still ahead.
 
-This repository holds **series documentation** (English). It is platform-agnostic: suitable for television, independent digital long-form, cinematic specials, or hybrid release. The docs define story architecture and episode content, not a locked distribution format.
+This repository holds **series documentation** (English). It is platform-agnostic: suitable for television, independent digital long-form, cinematic specials, or hybrid release.
 
 ---
 
@@ -23,34 +23,32 @@ Season 1 gives viewers a complete **summarized mental map** from the early unive
 
 | Season | Title | Role | Episodes |
 |--------|-------|------|----------|
-| 1 | [The Complete Story](docs/seasons/season-01-the-complete-story.md) | Full journey overview (cosmos → present, slowed finale) | 35 |
-| 2 | [The Deep Universe](docs/seasons/season-02-the-deep-universe.md) | Nature mechanisms in cosmic→life timeline | 26 |
-| 3 | [The Human Story](docs/seasons/season-03-the-human-story.md) | Human depth mirroring S1 Ep. 23–34 | 30 |
-| 4 | [Frontiers](docs/seasons/season-04-frontiers.md) | Unfinished questions, futures, series coda | 15 |
+| 1 | [The Complete Story](seasons/season-01/README.md) | Full journey overview (cosmos → present, slowed finale) | 35 |
+| 2 | [The Deep Universe](seasons/season-02/README.md) | Nature mechanisms in cosmic→life timeline | 26 |
+| 3 | [The Human Story](seasons/season-03/README.md) | Human depth mirroring S1 Ep. 23–34 | 30 |
+| 4 | [Frontiers](seasons/season-04/README.md) | Unfinished questions, futures, series coda | 15 |
 
-**Total Phase 1 map:** 106 episodes.
+**Total:** 106 episodes · [Browse seasons](seasons/README.md)
 
-Seasons 2–4 follow the **same historical/causal order** as Season 1, with each episode tagged to the S1 chapters it deepens. Continuity map: [docs/02-continuity-crosscheck.md](docs/02-continuity-crosscheck.md).
+Seasons 2–4 follow the **same historical/causal order** as Season 1. Continuity map: [continuity.md](continuity.md).
 
 ---
 
-## Documentation structure
+## Repository structure
 
 ```
 README.md
-docs/
-  00-series-bible-lite.md
-  01-master-timeline.md
-  02-continuity-crosscheck.md
-  seasons/
-    season-01-the-complete-story.md
-    season-01/episodes/                  # Phase 2 — S1 Ep. 1–35 done
-    season-02-the-deep-universe.md
-    season-02/episodes/                  # Phase 3 — S2 Ep. 1–26 done
-    season-03-the-human-story.md
-    season-03/episodes/                  # Phase 3 — S3 Ep. 1–30 done
-    season-04-frontiers.md
-    season-04/episodes/                  # Phase 3 — S4 Ep. 1–15 done
+bible.md
+timeline.md
+continuity.md
+seasons/
+  README.md
+  season-01/
+    README.md             ← episode map
+    episodes/             ← full treatments
+  season-02/
+  season-03/
+  season-04/
 ```
 
 ---
@@ -59,9 +57,9 @@ docs/
 
 | Phase | Scope | Status |
 |-------|-------|--------|
-| **1** | Season + episode maps | Done (106 episodes) |
-| **2** | Full Season 1 episode treatments | **Done** — [S1 Ep. 1–35](docs/seasons/season-01/episodes/README.md) |
-| **3** | Same depth for Seasons 2–4 | **Done** — [S2](docs/seasons/season-02/episodes/README.md) · [S3](docs/seasons/season-03/episodes/README.md) · [S4 Ep. 1–15](docs/seasons/season-04/episodes/README.md) |
+| **1** | Season + episode maps | **Done** (106 episodes) |
+| **2** | Full Season 1 treatments | **Done** — [S1 episodes](seasons/season-01/episodes/README.md) |
+| **3** | Full Seasons 2–4 treatments | **Done** — [S2](seasons/season-02/episodes/README.md) · [S3](seasons/season-03/episodes/README.md) · [S4](seasons/season-04/episodes/README.md) |
 | **4** | Partner pitch / expanded bible | Later |
 
 ---
@@ -75,9 +73,9 @@ docs/
 - **Worldview windows** — comparative philosophy/religion only where questions are civilizational; science first; neither advocacy nor attack.
 - **Visual grammar** — recurring timeline zooms, maps, trees, scale comparisons, reconstructions.
 
-Full rules: [docs/00-series-bible-lite.md](docs/00-series-bible-lite.md)  
-Timeline: [docs/01-master-timeline.md](docs/01-master-timeline.md)  
-Continuity: [docs/02-continuity-crosscheck.md](docs/02-continuity-crosscheck.md)
+Full rules: [bible.md](bible.md)  
+Timeline: [timeline.md](timeline.md)  
+Continuity: [continuity.md](continuity.md)
 
 ---
 
