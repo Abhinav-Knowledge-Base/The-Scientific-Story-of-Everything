@@ -30,7 +30,8 @@ Season 1 gives viewers a complete **summarized mental map** from the early unive
 
 **Total:** 106 episodes · [Browse seasons](seasons/README.md)
 
-Seasons 2–4 follow the **same historical/causal order** as Season 1. Continuity map: [continuity.md](continuity.md).
+Seasons 2–4 follow the **same historical/causal order** as Season 1. Continuity map: [continuity.md](continuity.md).  
+Reference watchlists (DW / BBC / PBS / Nat Geo / Khabargaon / Quest): sibling repo **hist-documentaries** (channel folders).
 
 ---
 
