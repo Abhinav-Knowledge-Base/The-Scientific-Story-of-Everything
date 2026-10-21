@@ -1,0 +1,53 @@
+---
+import { withBase } from '../lib/base';
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href={withBase('/')} class="brand-link">
+          <span class="brand-logo-icon">🌌</span>
+          <span class="brand-title">The Story of Everything</span>
+        </a>
+        <p class="footer-brand-desc">
+          One continuous causal chain from the quantum dawn 13.8 billion years ago to galaxies, life, human culture, and our existential frontiers ahead.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">The Four Volumes</h4>
+        <ul class="footer-links">
+          <li><a href={withBase('/seasons/season-01')} class="footer-link">Season 1: Complete Story (35 Ep)</a></li>
+          <li><a href={withBase('/seasons/season-02')} class="footer-link">Season 2: Deep Universe (26 Ep)</a></li>
+          <li><a href={withBase('/seasons/season-03')} class="footer-link">Season 3: The Human Story (30 Ep)</a></li>
+          <li><a href={withBase('/seasons/season-04')} class="footer-link">Season 4: Frontiers (15 Ep)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Master Architecture</h4>
+        <ul class="footer-links">
+          <li><a href={withBase('/timeline')} class="footer-link">Master Timeline (13.8 Ga)</a></li>
+          <li><a href={withBase('/guide')} class="footer-link">Series Guide & Principles</a></li>
+          <li><a href={withBase('/continuity')} class="footer-link">Continuity & Baton Matrix</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Epistemic Principles</h4>
+        <ul class="footer-links">
+          <li><span style="color: var(--tier-1-fact)">● Level 1: Established Fact</span></li>
+          <li><span style="color: var(--tier-2-inference)">● Level 2: Strong Inference</span></li>
+          <li><span style="color: var(--tier-3-debate)">● Level 3: Active Debate</span></li>
+          <li><span style="color: var(--tier-4-speculation)">● Level 4: Speculation</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} The Scientific Story of Everything. Free, open scientific education.</p>
+      <p>106 Canonical Chapters &middot; 100% Free Static Architecture &middot; Zero Commercial Overhead</p>
+    </div>
+  </div>
+</footer>

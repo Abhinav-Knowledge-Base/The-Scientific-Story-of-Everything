@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  imagePrompt: string;
+  imageSrc: string | null;
+  seasonSlug: string;
+  slug: string;
+}
+
+const { title, imagePrompt, imageSrc, seasonSlug, slug } = Astro.props;
+const expectedFilename = `${seasonSlug}-${slug}.webp`;
+---
+
+<div class="chapter-image-box">
+  {imageSrc ? (
+    <figure style="margin: 0;">
+      <img
+        src={imageSrc}
+        alt={`Cinematic illustration for ${title}`}
+        class="chapter-generated-img"
+        loading="lazy"
+      />
+      <figcaption style="padding: 12px 18px; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-card); display: flex; justify-content: space-between; align-items: center;">
+        <span>Visual: {title}</span>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem;">AI Generated Asset</span>
+      </figcaption>
+    </figure>
+  ) : (
+    <div class="chapter-placeholder-canvas">
+      <div class="placeholder-badge">
+        <span>✨ AI Artwork Prompt Ready</span>
+      </div>
+      <h3 class="placeholder-title">Visual Artwork Generation</h3>
+      <p class="placeholder-prompt-preview">
+        &ldquo;{imagePrompt}&rdquo;
+      </p>
+      
+      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center;">
+        <button
+          class="copy-prompt-btn"
+          data-prompt={imagePrompt}
+          onclick="navigator.clipboard.writeText(this.dataset.prompt); const orig = this.innerHTML; this.innerHTML = '✓ Copied Prompt!'; setTimeout(() => this.innerHTML = orig, 2500);"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy LLM Prompt
+        </button>
+
+        <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">
+          Save as: public/assets/images/episodes/{expectedFilename}
+        </span>
+      </div>
+    </div>
+  )}
+</div>

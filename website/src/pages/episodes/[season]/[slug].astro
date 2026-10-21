@@ -1,0 +1,212 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ImagePromptCard from '../../../components/ImagePromptCard.astro';
+import { getAllEpisodes, getEpisode } from '../../../lib/episodes';
+import { parseMarkdown } from '../../../lib/markdown';
+import { withBase } from '../../../lib/base';
+
+export function getStaticPaths() {
+  const episodes = getAllEpisodes();
+  return episodes.map((ep) => ({
+    params: {
+      season: ep.seasonSlug,
+      slug: ep.slug,
+    },
+  }));
+}
+
+const { season, slug } = Astro.params;
+const episode = getEpisode(season as string, slug as string);
+
+if (!episode) {
+  throw new Error(`Episode not found: ${season}/${slug}`);
+}
+
+const { html, toc } = parseMarkdown(episode.raw, episode.seasonSlug);
+---
+
+<Layout
+  title={`${episode.title} — ${episode.seasonTitle}`}
+  description={`${episode.title}: ${episode.coreQuestion}`}
+  activeNav={episode.seasonSlug}
+>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar">
+    <div id="progress-fill" class="reading-progress-fill"></div>
+  </div>
+
+  <div class="container">
+    <div class="reader-layout">
+      <!-- Main Reader Column -->
+      <article class="reader-main">
+        <!-- Breadcrumb -->
+        <nav style="display: flex; gap: 8px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px; flex-wrap: wrap;">
+          <a href={withBase('/')} style="color: var(--text-muted);">Home</a>
+          <span>/</span>
+          <a href={withBase(`/seasons/${episode.seasonSlug}`)} style="color: var(--text-muted);">{episode.seasonTitle}</a>
+          <span>/</span>
+          <span style="color: var(--text-primary);">{episode.title}</span>
+        </nav>
+
+        <!-- Chapter Header -->
+        <header class="chapter-header">
+          <div class="chapter-meta-pills">
+            <span class="meta-pill season">{episode.seasonBadge} &middot; Ep {episode.epNum}</span>
+            <span class="meta-pill">{episode.readingMinutes} min read ({episode.wordCount.toLocaleString()} words)</span>
+            {episode.deepens && (
+              <span class="meta-pill" style="border: 1px solid rgba(229, 184, 105, 0.4); color: var(--gold-primary);">
+                Deepens: {episode.deepens}
+              </span>
+            )}
+          </div>
+
+          <h1 class="chapter-title">{episode.title}</h1>
+
+          <!-- Core Question -->
+          <div class="chapter-core-question">
+            <span class="question-icon">✦</span>
+            <div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-primary); font-weight: 700; margin-bottom: 4px;">
+                Core Pedagogical Question
+              </div>
+              <div class="question-text">{episode.coreQuestion}</div>
+            </div>
+          </div>
+
+          <!-- Sequential Context & Reference Badges -->
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px 18px; font-size: 0.85rem; display: flex; flex-direction: column; gap: 8px;">
+            {episode.sequentialContext && (
+              <div style="display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap;">
+                <span style="color: var(--text-muted); font-weight: 600;">Sequential Context:</span>
+                <span style="color: #cbd5e1;">{episode.sequentialContext}</span>
+              </div>
+            )}
+            <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 0.8rem; padding-top: 4px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+              <span style="color: var(--text-muted);">Architecture:</span>
+              <a href={withBase('/timeline')} style="color: var(--cyan-primary);">Master Timeline</a>
+              <span style="color: var(--border-subtle);">&middot;</span>
+              <a href={withBase('/guide')} style="color: var(--cyan-primary);">Series Guide</a>
+              <span style="color: var(--border-subtle);">&middot;</span>
+              <a href={withBase('/continuity')} style="color: var(--cyan-primary);">Continuity Audit</a>
+            </div>
+          </div>
+        </header>
+
+        <!-- Chapter Artwork Box / Copyable Prompt -->
+        <ImagePromptCard
+          title={episode.title}
+          imagePrompt={episode.imagePrompt}
+          imageSrc={episode.imageSrc}
+          seasonSlug={episode.seasonSlug}
+          slug={episode.slug}
+        />
+
+        <!-- Substantive Narrative Body (KaTeX math & markdown) -->
+        <div class="prose-body" set:html={html} />
+
+        <!-- Baton Handoff Gateway to Next Episode -->
+        {episode.nextEpisode && (
+          <div class="baton-gateway-card">
+            <span class="baton-label">
+              <span>✦</span> Next in the Causal Sequence
+            </span>
+            <div class="baton-title">{episode.nextEpisode.title}</div>
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              The causal baton is handed forward. Continue following the unbroken chain into the next episode.
+            </p>
+
+            <div class="baton-nav-controls">
+              {episode.prevEpisode ? (
+                <a
+                  href={withBase(`/episodes/${episode.prevEpisode.seasonSlug}/${episode.prevEpisode.slug}`)}
+                  class="btn-secondary"
+                  style="font-size: 0.9rem; padding: 10px 18px;"
+                >
+                  &larr; Previous: {episode.prevEpisode.title}
+                </a>
+              ) : <div />}
+
+              <a
+                href={withBase(`/episodes/${episode.nextEpisode.seasonSlug}/${episode.nextEpisode.slug}`)}
+                class="btn-primary"
+                style="font-size: 0.95rem; padding: 12px 24px;"
+              >
+                <span>Read Next Chapter &rarr;</span>
+              </a>
+            </div>
+          </div>
+        )}
+      </article>
+
+      <!-- Sticky Sidebar Table of Contents -->
+      <aside class="reader-sidebar">
+        <div class="toc-card">
+          <h2 class="toc-title">Contents</h2>
+          {toc.length > 0 ? (
+            <ul class="toc-list">
+              {toc.map((item) => (
+                <li>
+                  <a
+                    href={`#${item.id}`}
+                    class:list={['toc-link', { 'level-3': item.level === 3 }]}
+                  >
+                    {item.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p style="font-size: 0.8rem; color: var(--text-muted);">
+              Full continuous narrative text.
+            </p>
+          )}
+
+          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-subtle); display: flex; flex-direction: column; gap: 10px; font-size: 0.82rem;">
+            <a href={withBase(`/seasons/${episode.seasonSlug}`)} style="color: var(--text-secondary);">
+              &larr; Back to {episode.seasonTitle}
+            </a>
+            <a href={withBase('/timeline')} style="color: var(--text-secondary);">
+              &bull; View Master Timeline
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Reading Progress Bar
+  const fill = document.getElementById('progress-fill');
+  window.addEventListener('scroll', () => {
+    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (totalHeight > 0 && fill) {
+      const progress = (window.scrollY / totalHeight) * 100;
+      fill.style.width = `${Math.min(100, Math.max(0, progress))}%`;
+    }
+  });
+
+  // Table of Contents Active Highlighting
+  const headings = document.querySelectorAll('.content-heading');
+  const tocLinks = document.querySelectorAll('.toc-link');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          tocLinks.forEach((link) => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    },
+    { rootMargin: '-80px 0px -70% 0px' }
+  );
+
+  headings.forEach((h) => observer.observe(h));
+</script>

@@ -1,0 +1,67 @@
+---
+import { withBase } from '../lib/base';
+
+interface Props {
+  activeNav?: string;
+}
+
+const { activeNav = '' } = Astro.props;
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href={withBase('/')} class="brand-link">
+      <span class="brand-logo-icon">🌌</span>
+      <div class="brand-text">
+        <span class="brand-title">The Story of Everything</span>
+        <span class="brand-tagline">13.8 Billion Years &middot; One Causal Story</span>
+      </div>
+    </a>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li>
+          <a href={withBase('/seasons/season-01')} class:list={['nav-link', { active: activeNav === 'season-01' }]}>
+            Season 1
+          </a>
+        </li>
+        <li>
+          <a href={withBase('/seasons/season-02')} class:list={['nav-link', { active: activeNav === 'season-02' }]}>
+            Season 2
+          </a>
+        </li>
+        <li>
+          <a href={withBase('/seasons/season-03')} class:list={['nav-link', { active: activeNav === 'season-03' }]}>
+            Season 3
+          </a>
+        </li>
+        <li>
+          <a href={withBase('/seasons/season-04')} class:list={['nav-link', { active: activeNav === 'season-04' }]}>
+            Season 4
+          </a>
+        </li>
+        <li>
+          <a href={withBase('/timeline')} class:list={['nav-link', { active: activeNav === 'timeline' }]}>
+            Timeline
+          </a>
+        </li>
+        <li>
+          <a href={withBase('/guide')} class:list={['nav-link', { active: activeNav === 'guide' }]}>
+            Guide
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button id="search-open-btn" class="search-trigger-btn" aria-label="Search Chapters">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <span>Search</span>
+        <kbd class="search-kbd">Ctrl K</kbd>
+      </button>
+    </div>
+  </div>
+</header>

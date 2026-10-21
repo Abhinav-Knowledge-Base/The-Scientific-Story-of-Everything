@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getMasterTimelineRaw } from '../lib/episodes';
+import { parseMarkdown } from '../lib/markdown';
+import { withBase } from '../lib/base';
+
+const raw = getMasterTimelineRaw();
+const { html, toc } = parseMarkdown(raw);
+---
+
+<Layout
+  title="Master Cross-Season Timeline (13.8 Ga to Cosmic End)"
+  description="Chronological reference across all four seasons of The Story of Everything, zooming from cosmic deep time to human history."
+  activeNav="timeline"
+>
+  <div class="container" style="padding-top: 40px; padding-bottom: 80px;">
+    <!-- Breadcrumb -->
+    <nav style="display: flex; gap: 8px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px;">
+      <a href={withBase('/')} style="color: var(--text-muted);">Home</a>
+      <span>/</span>
+      <span style="color: var(--text-primary);">Master Cross-Season Timeline</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 40px; margin-bottom: 40px;">
+      <div class="hero-badge" style="margin-bottom: 16px;">
+        <span>Chronological Blueprint</span>
+      </div>
+      <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: #fff; margin-bottom: 12px;">
+        Master Cross-Season Timeline
+      </h1>
+      <p style="font-size: 1.1rem; color: var(--gold-primary); font-family: var(--font-display); font-weight: 600; margin-bottom: 16px;">
+        13.8 Billion Years to the Cosmic End
+      </p>
+      <p style="max-width: 800px; font-size: 1rem; color: var(--text-secondary); line-height: 1.7;">
+        The primary pedagogical and dramatic goal is <strong>relative scale</strong> and <strong>unbroken causal continuity</strong>: zooming from cosmic deep time ($10^9$ years) into geological eons ($10^6$ years), down into human prehistory ($10^4$ years), historic civilizations ($10^2$ years), and finally into open horizons.
+      </p>
+    </div>
+
+    <!-- Timeline Body -->
+    <div class="reader-layout">
+      <div class="reader-main">
+        <div class="prose-body" set:html={html} />
+      </div>
+
+      <aside class="reader-sidebar">
+        <div class="toc-card">
+          <h2 class="toc-title">Timeline Eras</h2>
+          <ul class="toc-list">
+            {toc.map((item) => (
+              <li>
+                <a
+                  href={`#${item.id}`}
+                  class:list={['toc-link', { 'level-3': item.level === 3 }]}
+                >
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Layout>
