@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/base';
+---
+
+<Layout
+  title="404 — Coordinates Not Found | The Scientific Story of Everything"
+  description="The requested page does not exist in our 13.8-billion-year cosmic chronicle."
+>
+  <div class="container" style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 60px 20px;">
+    <div style="max-width: 640px; width: 100%; text-align: center; background: rgba(14, 21, 38, 0.7); backdrop-filter: blur(16px); border: 1px solid var(--border-subtle); border-radius: 20px; padding: 48px 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+      
+      <!-- Cosmic Singularity Badge -->
+      <div style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 9999px; margin-bottom: 24px;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ef4444; box-shadow: 0 0 10px #ef4444;"></span>
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.08em;">Error 404 &middot; Singularity Encountered</span>
+      </div>
+
+      <h1 style="font-family: var(--font-display); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 800; color: #fff; margin-bottom: 12px; letter-spacing: -0.02em;">
+        404
+      </h1>
+
+      <p style="font-size: 1.25rem; font-weight: 600; color: var(--gold-primary); margin-bottom: 16px;">
+        These Coordinates Do Not Exist in Spacetime
+      </p>
+
+      <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; font-size: 0.95rem;">
+        The chapter or asset you are looking for has either moved to another epoch or never crystallized in the 13.8-billion-year timeline.
+      </p>
+
+      <!-- Suggested Destinations -->
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px;">
+        <a href={withBase('/')} class="btn-primary" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;">
+          <span>🌌 Return to Cosmic Dawn (Homepage)</span>
+        </a>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <a href={withBase('/interesting-physics/')} class="btn-secondary" style="font-size: 0.85rem; padding: 10px;">
+            ⚛️ Interesting Physics
+          </a>
+          <a href={withBase('/timeline/')} class="btn-secondary" style="font-size: 0.85rem; padding: 10px;">
+            ⏳ Master Timeline
+          </a>
+          <a href={withBase('/seasons/season-01/')} class="btn-secondary" style="font-size: 0.85rem; padding: 10px;">
+            📖 Season 1 (Overview)
+          </a>
+          <a href={withBase('/seasons/season-02/')} class="btn-secondary" style="font-size: 0.85rem; padding: 10px;">
+            🔭 Season 2 (Deep Universe)
+          </a>
+        </div>
+      </div>
+
+      <div style="padding-top: 20px; border-top: 1px solid var(--border-subtle); font-size: 0.82rem; color: var(--text-muted);">
+        Tip: Press <kbd style="background: rgba(255,255,255,0.1); border: 1px solid var(--border-subtle); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); color: var(--gold-primary);">Ctrl + K</kbd> anywhere to search all 106 chapters instantly.
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    // Client-side fuzzy redirect for known legacy or misnamed URLs
+    (function() {
+      var path = window.location.pathname.toLowerCase();
+      if (path.indexOf('quantum-realm') !== -1) {
+        window.location.replace('/The-Scientific-Story-of-Everything/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains/');
+      }
+    })();
+  </script>
+</Layout>

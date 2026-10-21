@@ -11,25 +11,38 @@ const topics = [
     image: '/assets/images/infographics/invisible-universe.png',
     imageAlt: 'The Invisible Universe: Black Holes, Dark Matter, and Dark Energy Infographic',
     description: 'The universe is not just what we can see. Only about 5% of the cosmos is made of ordinary baryonic matter (stars, planets, gas, and dust). The remaining 95% is made up of invisible dark matter (~27%) and accelerating dark energy (~68%).',
+    composition: [
+      { label: 'Dark Energy', percent: '68%', desc: 'Drives the accelerated metric expansion of the universe', color: '#8b5cf6' },
+      { label: 'Dark Matter', percent: '27%', desc: 'Invisible gravitational scaffolding holding galaxies together', color: '#06b6d4' },
+      { label: 'Ordinary Matter', percent: '5%', desc: 'Stars, planets, interstellar gas, dust, and all living chemistry', color: '#eab308' },
+    ],
     highlights: [
       {
-        title: 'Black Holes',
-        text: 'Regions of spacetime where gravitational curvature is so extreme that nothing—not even light—can escape. Bound by an Event Horizon, harboring a theoretical gravitational singularity, and observable via glowing accretion disks (like the M87* image captured by the Event Horizon Telescope).',
+        title: 'Black Holes: Extreme Spacetime Curvature',
+        text: 'Regions of spacetime where gravitational curvature is so extreme that nothing—not even light—can escape. Formed from collapsed massive stellar cores or primordial fluctuations. Characterized by an Event Horizon (the point of no return), a theoretical gravitational singularity of infinite density, and glowing accretion disks (imaged directly for M87* and Sgr A* by the Event Horizon Telescope).',
       },
       {
-        title: 'Dark Matter (~27%)',
-        text: 'Unknown non-baryonic matter that interacts via gravity but does not emit, absorb, or reflect electromagnetic radiation. Confirmed by flat galaxy rotation curves, gravitational lensing arcs, and the Cosmic Microwave Background acoustic peaks.',
+        title: 'Dark Matter (~27%): The Cosmic Web Scaffolding',
+        text: 'An unknown form of non-baryonic matter that interacts gravitationally but does not absorb, emit, or reflect electromagnetic radiation. Robustly demonstrated by flat galactic rotation curves (Vera Rubin), gravitational lensing arcs in massive galaxy clusters, and the precision acoustic peaks of the Cosmic Microwave Background. Leading candidates include WIMPs and axions.',
       },
       {
-        title: 'Dark Energy (~68%)',
-        text: 'A pervasive negative pressure or cosmological constant (Λ) accelerating the metric expansion of spacetime, confirmed by Type Ia supernovae observations.',
+        title: 'Dark Energy (~68%): Accelerating Metric Expansion',
+        text: 'A smooth, pervasive negative-pressure energy field causing cosmic expansion to accelerate. Observed via distance-redshift measurements of Type Ia supernovae (1998 Nobel Prize) and confirmed by baryon acoustic oscillations. Most commonly modeled as Einstein’s Cosmological Constant (Λ) representing the energy density of empty quantum space.',
       },
     ],
+    relatedConcepts: [
+      { name: 'Neutron Stars', desc: 'Ultra-dense stellar remnants supported by neutron degeneracy pressure; frequent binary companions to black holes.' },
+      { name: 'Quasars', desc: 'Hyper-luminous galactic nuclei powered by supermassive black holes accreting gas at gigawatt scales.' },
+      { name: 'Gravitational Waves', desc: 'Ripples in four-dimensional spacetime detected directly by LIGO/Virgo from binary black hole and neutron star coalescences.' },
+      { name: 'Cosmic Microwave Background (CMB)', desc: 'The 2.725 K thermal afterglow of the Big Bang released at 380,000 years, preserving primordial density fluctuations.' },
+      { name: 'Galaxy Clusters', desc: 'The largest gravitationally bound structures in the universe, immersed in immense dark matter halos and hot intracluster gas.' },
+      { name: 'Black Hole Mergers', desc: 'Cataclysmic collisions radiating up to several solar masses of pure gravitational energy within fractions of a second.' },
+    ],
     crossLinks: [
-      { text: 'S1E05: Cosmic Dark Ages', url: '/episodes/season-01/ep-05-the-cosmic-dark-ages' },
-      { text: 'S2E06: Dark Matter & Cosmic Web', url: '/episodes/season-02/ep-06-dark-matter-and-the-cosmic-web' },
-      { text: 'S2E10: Black Holes & Extreme Gravity', url: '/episodes/season-02/ep-10-black-holes-and-extreme-gravity' },
-      { text: 'S4E13: The Fate of the Universe', url: '/episodes/season-04/ep-13-the-fate-of-the-universe' },
+      { text: 'S1E05: Cosmic Dark Ages', url: '/episodes/season-01/ep-05-the-cosmic-dark-ages/' },
+      { text: 'S2E06: Dark Matter & Cosmic Web', url: '/episodes/season-02/ep-06-dark-matter-and-the-cosmic-web/' },
+      { text: 'S2E10: Black Holes & Extreme Gravity', url: '/episodes/season-02/ep-10-black-holes-and-extreme-gravity/' },
+      { text: 'S4E13: The Fate of the Universe', url: '/episodes/season-04/ep-13-the-fate-of-the-universe/' },
     ],
   },
   {
@@ -62,9 +75,9 @@ const topics = [
       },
     ],
     crossLinks: [
-      { text: 'S1E01: Before the Beginning', url: '/episodes/season-01/ep-01-before-the-beginning' },
-      { text: 'S2E01: Space, Time, and Gravity', url: '/episodes/season-02/ep-01-space-time-and-gravity' },
-      { text: 'S2E02: The Expanding Universe in Depth', url: '/episodes/season-02/ep-02-the-expanding-universe-in-depth' },
+      { text: 'S1E01: Before the Beginning', url: '/episodes/season-01/ep-01-before-the-beginning/' },
+      { text: 'S2E01: Space, Time, and Gravity', url: '/episodes/season-02/ep-01-space-time-and-gravity/' },
+      { text: 'S2E02: The Expanding Universe in Depth', url: '/episodes/season-02/ep-02-the-expanding-universe-in-depth/' },
     ],
   },
   {
@@ -90,9 +103,9 @@ const topics = [
       },
     ],
     crossLinks: [
-      { text: 'S1E07: The Birth of Galaxies', url: '/episodes/season-01/ep-07-the-birth-of-galaxies' },
-      { text: 'S1E08: Our Milky Way', url: '/episodes/season-01/ep-08-our-milky-way' },
-      { text: 'S1E09: The Birth of the Solar System', url: '/episodes/season-01/ep-09-the-birth-of-the-solar-system' },
+      { text: 'S1E07: The Birth of Galaxies', url: '/episodes/season-01/ep-07-the-birth-of-galaxies/' },
+      { text: 'S1E08: Our Milky Way', url: '/episodes/season-01/ep-08-our-milky-way/' },
+      { text: 'S1E09: The Birth of the Solar System', url: '/episodes/season-01/ep-09-the-birth-of-the-solar-system/' },
     ],
   },
   {
@@ -116,10 +129,10 @@ const topics = [
       },
     ],
     crossLinks: [
-      { text: 'S1E11: The First Life', url: '/episodes/season-01/ep-11-the-first-life' },
-      { text: 'S1E13: From Chemistry to Life', url: '/episodes/season-01/ep-13-from-chemistry-to-life' },
-      { text: 'S2E17: Prebiotic Earth', url: '/episodes/season-02/ep-17-prebiotic-earth' },
-      { text: 'S2E19: Membranes, Protocells & Metabolism', url: '/episodes/season-02/ep-19-membranes-protocells-and-metabolism' },
+      { text: 'S1E11: The First Life', url: '/episodes/season-01/ep-11-the-first-life/' },
+      { text: 'S1E13: From Chemistry to Life', url: '/episodes/season-01/ep-13-from-chemistry-to-life/' },
+      { text: 'S2E17: Prebiotic Earth', url: '/episodes/season-02/ep-17-prebiotic-earth/' },
+      { text: 'S2E19: Membranes, Protocells & Metabolism', url: '/episodes/season-02/ep-19-membranes-protocells-and-metabolism/' },
     ],
   },
   {
@@ -140,8 +153,8 @@ const topics = [
       },
     ],
     crossLinks: [
-      { text: 'S1E33: The Last 500 Years', url: '/episodes/season-01/ep-33-the-last-five-hundred-years' },
-      { text: 'S3E26: Electricity, Computing & Global Nerves', url: '/episodes/season-03/ep-26-electricity-computing-and-early-global-nerves' },
+      { text: 'S1E33: The Last 500 Years', url: '/episodes/season-01/ep-33-the-last-five-hundred-years/' },
+      { text: 'S3E26: Electricity, Computing & Global Nerves', url: '/episodes/season-03/ep-26-electricity-computing-and-early-global-nerves/' },
     ],
   },
   {
@@ -165,8 +178,9 @@ const topics = [
       },
     ],
     crossLinks: [
-      { text: 'S1E01: Before the Beginning', url: '/episodes/season-01/ep-01-before-the-beginning' },
-      { text: 'S2E04: The Particle Era', url: '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains' },
+      { text: 'S1E01: Before the Beginning', url: '/episodes/season-01/ep-01-before-the-beginning/' },
+      { text: 'S1E03: The First Seconds', url: '/episodes/season-01/ep-03-the-first-seconds/' },
+      { text: 'S2E04: The Particle Era & Why Matter Remains', url: '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains/' },
     ],
   },
   {
@@ -186,8 +200,30 @@ const topics = [
       },
     ],
     crossLinks: [
-      { text: 'S2E04: Particle Era', url: '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains' },
-      { text: 'S4E04: Consciousness & Observers', url: '/episodes/season-04/ep-04-consciousness' },
+      { text: 'S1E03: The First Seconds', url: '/episodes/season-01/ep-03-the-first-seconds/' },
+      { text: 'S2E04: The Particle Era', url: '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains/' },
+      { text: 'S4E04: Consciousness & Observers', url: '/episodes/season-04/ep-04-consciousness/' },
+    ],
+  },
+  {
+    id: 'classical-vs-quantum-physics',
+    title: 'Classical vs Quantum Physics: The Deep Divergence',
+    tag: 'Epistemology of Nature',
+    badgeColor: '#8b5cf6',
+    description: 'How modern science reconciled macroscopic mechanics with microscopic quantum field theory—and the ongoing search for a unified Theory of Quantum Gravity.',
+    highlights: [
+      {
+        title: 'Measurement Problem',
+        text: 'In classical physics, observing an object does not alter its trajectory. In quantum mechanics, measurement forces superposition to collapse (Copenhagen) or branch into universal superpositions (Many-Worlds).',
+      },
+      {
+        title: 'The Limit of Classical Theory',
+        text: 'Classical electrodynamics predicted the ultraviolet catastrophe (blackbody radiation radiating infinite energy). Max Planck solved this by introducing quantized energy packets: E = nhf.',
+      },
+    ],
+    crossLinks: [
+      { text: 'S1E03: The First Seconds', url: '/episodes/season-01/ep-03-the-first-seconds/' },
+      { text: 'S2E04: The Particle Era', url: '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains/' },
     ],
   },
   {
@@ -211,8 +247,9 @@ const topics = [
       },
     ],
     crossLinks: [
-      { text: 'S4E04: Consciousness & Information', url: '/episodes/season-04/ep-04-consciousness' },
-      { text: 'S4E06: Intelligence Beyond Biology', url: '/episodes/season-04/ep-06-intelligence-beyond-biology' },
+      { text: 'S2E04: The Particle Era', url: '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains/' },
+      { text: 'S4E04: Consciousness & Information', url: '/episodes/season-04/ep-04-consciousness/' },
+      { text: 'S4E06: Intelligence Beyond Biology', url: '/episodes/season-04/ep-06-intelligence-beyond-biology/' },
     ],
   },
 ];
@@ -282,6 +319,26 @@ const topics = [
             {topic.description}
           </p>
 
+          <!-- Cosmic Inventory Composition if present -->
+          {topic.composition && (
+            <div style="margin-bottom: 28px;">
+              <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold-primary); margin-bottom: 12px;">
+                Cosmic Inventory Breakdown (Planck Satellite &amp; WMAP Consensus)
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+                {topic.composition.map((c) => (
+                  <div style="background: rgba(14, 21, 38, 0.6); border: 1px solid var(--border-subtle); border-top: 3px solid; border-top-color: var(--cyan-primary); border-radius: 10px; padding: 16px;">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+                      <span style="font-weight: 700; color: #fff; font-size: 0.95rem;">{c.label}</span>
+                      <span style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 800; color: var(--gold-primary);">{c.percent}</span>
+                    </div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">{c.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           <!-- Infographic / Visual Artwork -->
           {topic.image && (
             <div style="margin: 24px 0 32px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: #080b12;">
@@ -289,14 +346,14 @@ const topics = [
                 <img
                   src={withBase(topic.image)}
                   alt={topic.imageAlt}
-                  style="width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #06080e; display: block;"
+                  style="width: 100%; max-height: 850px; height: auto; object-fit: contain; background: #06080e; display: block; margin: 0 auto;"
                   loading="lazy"
                 />
               </a>
-              <div style="padding: 12px 18px; font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.4); display: flex; justify-content: space-between; align-items: center;">
+              <div style="padding: 12px 18px; font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.5); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                 <span>{topic.imageAlt}</span>
-                <a href={withBase(topic.image)} target="_blank" rel="noopener noreferrer" style="color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.75rem;">
-                  🔍 Open Full Resolution
+                <a href={withBase(topic.image)} target="_blank" rel="noopener noreferrer" style="color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.78rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                  <span>🔍 View Original Full Resolution (1312&times;1199)</span>
                 </a>
               </div>
             </div>
@@ -308,14 +365,14 @@ const topics = [
                 <img
                   src={withBase(topic.secondaryImage)}
                   alt="Spacetime Curvature Explanatory Infographic"
-                  style="width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #06080e; display: block;"
+                  style="width: 100%; max-height: 850px; height: auto; object-fit: contain; background: #06080e; display: block; margin: 0 auto;"
                   loading="lazy"
                 />
               </a>
-              <div style="padding: 12px 18px; font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.4); display: flex; justify-content: space-between; align-items: center;">
+              <div style="padding: 12px 18px; font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.5); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
                 <span>Educational Breakdown: How Gravity &amp; Spacetime Curvature Work</span>
-                <a href={withBase(topic.secondaryImage)} target="_blank" rel="noopener noreferrer" style="color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.75rem;">
-                  🔍 Open Full Resolution
+                <a href={withBase(topic.secondaryImage)} target="_blank" rel="noopener noreferrer" style="color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.78rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                  <span>🔍 View Original Full Resolution</span>
                 </a>
               </div>
             </div>
@@ -351,6 +408,23 @@ const topics = [
               </div>
             ))}
           </div>
+
+          <!-- Related Concepts Grid if present -->
+          {topic.relatedConcepts && (
+            <div style="margin-bottom: 28px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 22px;">
+              <div style="font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cyan-primary); margin-bottom: 14px;">
+                Related Astrophysical Concepts:
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+                {topic.relatedConcepts.map((rc) => (
+                  <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px 14px;">
+                    <div style="font-size: 0.88rem; font-weight: 700; color: #fff; margin-bottom: 4px;">{rc.name}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">{rc.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <!-- Series Deep Dive Cross-Links -->
           <div style="padding-top: 20px; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
