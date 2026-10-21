@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://abhinav-knowledge-base.github.io',
   base: '/The-Scientific-Story-of-Everything',
   redirects: {
-    '/episodes/season-02/ep-02-the-quantum-realm': '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains',
-    '/episodes/season-02/ep-02-the-quantum-realm/': '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains/',
+    '/episodes/season-02/ep-02-the-quantum-realm': '/The-Scientific-Story-of-Everything/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains/',
+    '/episodes/season-02/ep-02-the-quantum-realm/': '/The-Scientific-Story-of-Everything/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains/',
   },
 });
