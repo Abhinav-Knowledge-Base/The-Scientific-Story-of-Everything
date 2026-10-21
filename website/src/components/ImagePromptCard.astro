@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/base';
+
 interface Props {
   title: string;
   imagePrompt: string;
@@ -13,16 +15,20 @@ const expectedFilename = `${seasonSlug}-${slug}.webp`;
 
 <div class="chapter-image-box">
   {imageSrc ? (
-    <figure style="margin: 0;">
-      <img
-        src={imageSrc}
-        alt={`Cinematic illustration for ${title}`}
-        class="chapter-generated-img"
-        loading="lazy"
-      />
+    <figure style="margin: 0; position: relative;">
+      <a href={withBase(imageSrc)} target="_blank" rel="noopener noreferrer" title="Click to view full resolution artwork">
+        <img
+          src={withBase(imageSrc)}
+          alt={`Cinematic illustration for ${title}`}
+          class="chapter-generated-img"
+          loading="lazy"
+        />
+      </a>
       <figcaption style="padding: 12px 18px; font-size: 0.8rem; color: var(--text-muted); background: var(--bg-card); display: flex; justify-content: space-between; align-items: center;">
         <span>Visual: {title}</span>
-        <span style="font-family: var(--font-mono); font-size: 0.72rem;">AI Generated Asset</span>
+        <a href={withBase(imageSrc)} target="_blank" rel="noopener noreferrer" style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--gold-primary);">
+          🔍 View Full Resolution
+        </a>
       </figcaption>
     </figure>
   ) : (

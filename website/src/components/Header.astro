@@ -46,6 +46,11 @@ const { activeNav = '' } = Astro.props;
           </a>
         </li>
         <li>
+          <a href={withBase('/interesting-physics')} class:list={['nav-link', { active: activeNav === 'physics' }]}>
+            Interesting Physics
+          </a>
+        </li>
+        <li>
           <a href={withBase('/guide')} class:list={['nav-link', { active: activeNav === 'guide' }]}>
             Guide
           </a>

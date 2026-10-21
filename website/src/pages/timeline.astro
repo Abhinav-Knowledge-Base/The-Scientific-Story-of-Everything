@@ -37,6 +37,43 @@ const { html, toc } = parseMarkdown(raw);
       </p>
     </div>
 
+    <!-- Visual Infographic Reference Gallery -->
+    <div style="margin-bottom: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden;">
+        <a href={withBase('/assets/images/infographics/cosmic-hierarchy.png')} target="_blank" rel="noopener noreferrer">
+          <img
+            src={withBase('/assets/images/infographics/cosmic-hierarchy.png')}
+            alt="From Zero to the Universe: Cosmic Hierarchy Infographic"
+            style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;"
+            loading="lazy"
+          />
+        </a>
+        <div style="padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 600; font-size: 0.9rem; color: #fff;">Cosmic Hierarchy: Zero to Universe</span>
+          <a href={withBase('/assets/images/infographics/cosmic-hierarchy.png')} target="_blank" rel="noopener noreferrer" style="font-size: 0.78rem; color: var(--gold-primary);">
+            🔍 Full Infographic
+          </a>
+        </div>
+      </div>
+
+      <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden;">
+        <a href={withBase('/assets/images/infographics/invisible-universe.png')} target="_blank" rel="noopener noreferrer">
+          <img
+            src={withBase('/assets/images/infographics/invisible-universe.png')}
+            alt="The Invisible Universe: Dark Matter & Dark Energy"
+            style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;"
+            loading="lazy"
+          />
+        </a>
+        <div style="padding: 14px 18px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-weight: 600; font-size: 0.9rem; color: #fff;">The Invisible Universe: Dark Energy &amp; Matter</span>
+          <a href={withBase('/assets/images/infographics/invisible-universe.png')} target="_blank" rel="noopener noreferrer" style="font-size: 0.78rem; color: var(--gold-primary);">
+            🔍 Full Infographic
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- Timeline Body -->
     <div class="reader-layout">
       <div class="reader-main">

@@ -1,0 +1,376 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/base';
+
+const topics = [
+  {
+    id: 'black-holes-dark-matter-dark-energy',
+    title: 'Black Holes, Dark Matter & Dark Energy',
+    tag: 'Cosmic Architecture',
+    badgeColor: '#a855f7',
+    image: '/assets/images/infographics/invisible-universe.png',
+    imageAlt: 'The Invisible Universe: Black Holes, Dark Matter, and Dark Energy Infographic',
+    description: 'The universe is not just what we can see. Only about 5% of the cosmos is made of ordinary baryonic matter (stars, planets, gas, and dust). The remaining 95% is made up of invisible dark matter (~27%) and accelerating dark energy (~68%).',
+    highlights: [
+      {
+        title: 'Black Holes',
+        text: 'Regions of spacetime where gravitational curvature is so extreme that nothing—not even light—can escape. Bound by an Event Horizon, harboring a theoretical gravitational singularity, and observable via glowing accretion disks (like the M87* image captured by the Event Horizon Telescope).',
+      },
+      {
+        title: 'Dark Matter (~27%)',
+        text: 'Unknown non-baryonic matter that interacts via gravity but does not emit, absorb, or reflect electromagnetic radiation. Confirmed by flat galaxy rotation curves, gravitational lensing arcs, and the Cosmic Microwave Background acoustic peaks.',
+      },
+      {
+        title: 'Dark Energy (~68%)',
+        text: 'A pervasive negative pressure or cosmological constant (Λ) accelerating the metric expansion of spacetime, confirmed by Type Ia supernovae observations.',
+      },
+    ],
+    crossLinks: [
+      { text: 'S1E05: Cosmic Dark Ages', url: '/episodes/season-01/ep-05-the-cosmic-dark-ages' },
+      { text: 'S2E06: Dark Matter & Cosmic Web', url: '/episodes/season-02/ep-06-dark-matter-and-the-cosmic-web' },
+      { text: 'S2E10: Black Holes & Extreme Gravity', url: '/episodes/season-02/ep-10-black-holes-and-extreme-gravity' },
+      { text: 'S4E13: The Fate of the Universe', url: '/episodes/season-04/ep-13-the-fate-of-the-universe' },
+    ],
+  },
+  {
+    id: 'explain-spacetime-curvature',
+    title: 'Explaining Spacetime Curvature',
+    tag: 'General Relativity',
+    badgeColor: '#3b82f6',
+    image: '/assets/images/episodes/season-01-ep-01-before-the-beginning.png',
+    secondaryImage: '/assets/images/infographics/spacetime-curvature-explained.png',
+    imageAlt: 'Spacetime Curvature and Geodesic Motion Visualization',
+    description: 'In 1915, Albert Einstein revolutionized our understanding of gravity. Spacetime is not a rigid, empty container; it is a dynamic, participatory four-dimensional continuum that bends and stretches in the presence of mass and energy.',
+    equation: 'G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} = \\frac{8\\pi G}{c^4} T_{\\mu\\nu}',
+    quote: 'Spacetime tells matter how to move; matter tells spacetime how to curve. — John Archibald Wheeler',
+    highlights: [
+      {
+        title: 'Geodesics (Natural Paths)',
+        text: 'Planets do not orbit stars due to an invisible pulling tether. They travel along the straightest possible trajectories (geodesics) through curved four-dimensional spacetime.',
+      },
+      {
+        title: 'Gravitational Lensing',
+        text: 'Mass bends the very coordinates of space. When light passes near a massive galaxy cluster, its trajectory bends—first observed during Sir Arthur Eddington’s 1919 solar eclipse.',
+      },
+      {
+        title: 'Gravitational Time Dilation',
+        text: 'Clocks situated deeper in gravitational potential wells tick slower. GPS satellites must adjust for relativistic time dilation every second to maintain navigation accuracy.',
+      },
+      {
+        title: 'Gravitational Waves',
+        text: 'When massive bodies (like colliding black holes) accelerate violently, they produce ripples in the fabric of spacetime, detected directly on Earth by LIGO in 2015.',
+      },
+    ],
+    crossLinks: [
+      { text: 'S1E01: Before the Beginning', url: '/episodes/season-01/ep-01-before-the-beginning' },
+      { text: 'S2E01: Space, Time, and Gravity', url: '/episodes/season-02/ep-01-space-time-and-gravity' },
+      { text: 'S2E02: The Expanding Universe in Depth', url: '/episodes/season-02/ep-02-the-expanding-universe-in-depth' },
+    ],
+  },
+  {
+    id: 'visual-galaxy-guide',
+    title: 'Visual Galaxy Guide & Cosmic Hierarchy',
+    tag: 'Cosmic Scales',
+    badgeColor: '#06b6d4',
+    image: '/assets/images/infographics/cosmic-hierarchy.png',
+    imageAlt: 'From Zero to the Universe: Cosmic Hierarchy Infographic',
+    description: 'Tracing our location in reality: from subatomic matter and the Big Bang singularity across hierarchical scales to the ~2 trillion galaxies populating the observable universe.',
+    highlights: [
+      {
+        title: 'Cosmic Scales Hierarchy',
+        text: 'Quantum vacuum fluctuations → Light element nuclei → Population III stars → Protogalaxies → The Cosmic Web → Spiral/Elliptical galaxies → Stellar systems → Habitable rocky worlds.',
+      },
+      {
+        title: 'Our Milky Way Anatomy',
+        text: 'Barred spiral galaxy spanning ~100,000 light-years, harboring 100 to 400 billion stars and our central supermassive black hole Sagittarius A*.',
+      },
+      {
+        title: 'Planetary Systems Architecture',
+        text: 'Differentiation between rocky terrestrial worlds (Mercury, Venus, Earth, Mars), gas giants (Jupiter, Saturn), and ice giants (Uranus, Neptune), bordered by the Kuiper Belt and Oort Cloud.',
+      },
+    ],
+    crossLinks: [
+      { text: 'S1E07: The Birth of Galaxies', url: '/episodes/season-01/ep-07-the-birth-of-galaxies' },
+      { text: 'S1E08: Our Milky Way', url: '/episodes/season-01/ep-08-our-milky-way' },
+      { text: 'S1E09: The Birth of the Solar System', url: '/episodes/season-01/ep-09-the-birth-of-the-solar-system' },
+    ],
+  },
+  {
+    id: 'explain-abiogenesis-theory',
+    title: 'Explain Abiogenesis Theory: From Chemistry to Life',
+    tag: 'Geobiological Dawn',
+    badgeColor: '#10b981',
+    description: 'How does non-living organic chemistry cross the threshold into self-sustaining, self-replicating biological life? The leading empirical framework points to submarine alkaline hydrothermal vents in the ancient Archean ocean.',
+    highlights: [
+      {
+        title: 'Thermodynamics of Dissipative Systems',
+        text: 'Life is not a violation of the Second Law of Thermodynamics (ΔS ≥ 0). Living cells are dissipative non-equilibrium structures that export entropy to create localized complexity.',
+      },
+      {
+        title: 'Alkaline Hydrothermal Vents',
+        text: 'Deep-sea mineral chimneys rich in iron and sulfur provide natural micro-cavities, inorganic catalysts, and spontaneous proton electrochemical gradients across mineral membranes.',
+      },
+      {
+        title: 'The RNA World & Protocells',
+        text: 'RNA uniquely serves as both genetic information storage and catalytic molecular enzyme (ribozyme), encapsulating within fatty-acid lipid membranes to forge LUCA (Last Universal Common Ancestor).',
+      },
+    ],
+    crossLinks: [
+      { text: 'S1E11: The First Life', url: '/episodes/season-01/ep-11-the-first-life' },
+      { text: 'S1E13: From Chemistry to Life', url: '/episodes/season-01/ep-13-from-chemistry-to-life' },
+      { text: 'S2E17: Prebiotic Earth', url: '/episodes/season-02/ep-17-prebiotic-earth' },
+      { text: 'S2E19: Membranes, Protocells & Metabolism', url: '/episodes/season-02/ep-19-membranes-protocells-and-metabolism' },
+    ],
+  },
+  {
+    id: 'maxwell-equations-impact',
+    title: 'Maxwell’s Equations: Unifying Light & Electromagnetism',
+    tag: 'Classical Fields',
+    badgeColor: '#f59e0b',
+    description: 'In the 1860s, James Clerk Maxwell unified electric charges and magnetic poles into four coupled partial differential equations, revealing that light itself is an electromagnetic wave.',
+    equation: '\\nabla \\cdot \\mathbf{E} = \\frac{\\rho}{\\varepsilon_0}, \\quad \\nabla \\cdot \\mathbf{B} = 0, \\quad \\nabla \\times \\mathbf{E} = -\\frac{\\partial \\mathbf{B}}{\\partial t}, \\quad \\nabla \\times \\mathbf{B} = \\mu_0 \\mathbf{J} + \\mu_0 \\varepsilon_0 \\frac{\\partial \\mathbf{E}}{\\partial t}',
+    highlights: [
+      {
+        title: 'The Speed of Light Revealed',
+        text: 'By combining electric permittivity (ε₀) and magnetic permeability (μ₀), Maxwell proved the wave speed matches light: c = 1 / √(μ₀ ε₀).',
+      },
+      {
+        title: 'Foundation of Modern Civilization',
+        text: 'From radio communication, electric generators, power grids, and radar to modern fiber-optic telecommunications and quantum electrodynamics.',
+      },
+    ],
+    crossLinks: [
+      { text: 'S1E33: The Last 500 Years', url: '/episodes/season-01/ep-33-the-last-five-hundred-years' },
+      { text: 'S3E26: Electricity, Computing & Global Nerves', url: '/episodes/season-03/ep-26-electricity-computing-and-early-global-nerves' },
+    ],
+  },
+  {
+    id: 'compare-quantum-classical',
+    title: 'Comparing Classical vs Quantum Physics',
+    tag: 'Fundamental Paradigms',
+    badgeColor: '#6366f1',
+    description: 'A comparison between the clockwork, deterministic worldview of Isaac Newton and the probabilistic, wave-particle reality of quantum mechanics.',
+    highlights: [
+      {
+        title: 'Determinism vs Probability',
+        text: 'Classical mechanics asserts that complete knowledge of position and momentum permits absolute prediction of the future. Quantum mechanics proves nature is fundamentally probabilistic, governed by the Born rule and wavefunctions (Ψ).',
+      },
+      {
+        title: 'Continuous vs Discrete',
+        text: 'Classical energy changes smoothly along continuous curves. Quantum energy is exchanged in discrete packets or quanta (E = hν).',
+      },
+      {
+        title: 'Heisenberg Uncertainty Principle',
+        text: 'Canonical conjugate variables cannot be simultaneously measured with arbitrary precision: Δx · Δp ≥ ℏ / 2.',
+      },
+    ],
+    crossLinks: [
+      { text: 'S1E01: Before the Beginning', url: '/episodes/season-01/ep-01-before-the-beginning' },
+      { text: 'S2E04: The Particle Era', url: '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains' },
+    ],
+  },
+  {
+    id: 'double-slit-explained',
+    title: 'The Double-Slit Experiment Explained',
+    tag: 'Quantum Foundations',
+    badgeColor: '#ec4899',
+    description: 'Richard Feynman called the double-slit experiment the central mystery of quantum mechanics: "a phenomenon which is impossible, absolutely impossible, to explain in any classical way, and which has in it the heart of quantum mechanics."',
+    highlights: [
+      {
+        title: 'Wave-Particle Duality',
+        text: 'When photons or electrons are fired one at a time through two parallel slits, they land as individual particle impacts on a detector screen. Yet over time, their distribution builds up an unmistakable interference pattern—proving each particle traversed both paths as a wave of probability.',
+      },
+      {
+        title: 'The Observer & Decoherence',
+        text: 'If detectors are placed at the slits to determine which slit the particle went through, the interference pattern disappears instantly. The act of physical measurement entangles the particle with the macroscopic environment, causing quantum decoherence.',
+      },
+    ],
+    crossLinks: [
+      { text: 'S2E04: Particle Era', url: '/episodes/season-02/ep-04-the-particle-era-and-why-matter-remains' },
+      { text: 'S4E04: Consciousness & Observers', url: '/episodes/season-04/ep-04-consciousness' },
+    ],
+  },
+  {
+    id: 'quantum-entanglement-explanation',
+    title: 'Quantum Entanglement: "Spooky Action at a Distance"',
+    tag: 'Quantum Non-Locality',
+    badgeColor: '#14b8a6',
+    description: 'When two or more quantum particles interact in such a way that their quantum states cannot be described independently, they become entangled—sharing a single non-separable wavefunction regardless of the physical distance between them.',
+    highlights: [
+      {
+        title: 'The EPR Paradox & Bell’s Theorem',
+        text: 'Einstein, Podolsky, and Rosen argued that entanglement indicated quantum mechanics was incomplete ("hidden variables"). In 1964, John Stewart Bell formulated mathematical inequalities experimentally proven by Alain Aspect and Anton Zeilinger: local realism is false; nature is fundamentally non-local.',
+      },
+      {
+        title: 'No Faster-Than-Light Signaling',
+        text: 'Although measurement outcomes correlate instantaneously across light-years, the individual outcomes are strictly random. No classical information can be transmitted faster than light, preserving Special Relativity.',
+      },
+      {
+        title: 'Quantum Technologies',
+        text: 'Entanglement forms the computational substrate for quantum super-dense coding, quantum teleportation, and quantum cryptography (QKD).',
+      },
+    ],
+    crossLinks: [
+      { text: 'S4E04: Consciousness & Information', url: '/episodes/season-04/ep-04-consciousness' },
+      { text: 'S4E06: Intelligence Beyond Biology', url: '/episodes/season-04/ep-06-intelligence-beyond-biology' },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Interesting Physics — Visual Deep Dives & Infographics"
+  description="Visual infographics and deep explanations of fundamental physics: Spacetime Curvature, Black Holes, Dark Matter, Abiogenesis, Maxwell Equations, and Quantum Mechanics."
+  activeNav="physics"
+>
+  <div class="container" style="padding-top: 40px; padding-bottom: 80px;">
+    <!-- Breadcrumb -->
+    <nav style="display: flex; gap: 8px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 24px;">
+      <a href={withBase('/')} style="color: var(--text-muted);">Home</a>
+      <span>/</span>
+      <span style="color: var(--text-primary);">Interesting Physics</span>
+    </nav>
+
+    <!-- Header Banner -->
+    <div style="background: linear-gradient(135deg, rgba(14, 21, 38, 0.9) 0%, rgba(6, 8, 14, 0.95) 100%); border: 1px solid var(--border-subtle); border-left: 4px solid var(--cyan-primary); border-radius: 16px; padding: 40px; margin-bottom: 40px;">
+      <div class="hero-badge" style="margin-bottom: 16px;">
+        <span>📁 Fundamental Concepts &amp; Visual Infographics</span>
+      </div>
+      <h1 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; color: #fff; margin-bottom: 12px;">
+        Interesting Physics
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--cyan-primary); font-family: var(--font-display); font-weight: 600; margin-bottom: 16px;">
+        From Spacetime Curvature &amp; Black Holes to Quantum Entanglement &amp; Abiogenesis
+      </p>
+      <p style="max-width: 820px; font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7;">
+        Explore essential physical and geobiological mechanisms through high-resolution scientific infographics, mathematical formulations, and direct cross-references into the 106-chapter masterwork.
+      </p>
+    </div>
+
+    <!-- Quick Jump Topic Navigation -->
+    <div class="timeline-scrubber" style="margin-bottom: 50px;">
+      <div style="margin-bottom: 14px; font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted);">
+        Select Physics Topic:
+      </div>
+      <div class="scrubber-epochs">
+        {topics.map((t) => (
+          <a href={`#${t.id}`} class="epoch-pill">
+            {t.title}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Topics List -->
+    <div style="display: flex; flex-direction: column; gap: 60px;">
+      {topics.map((topic, idx) => (
+        <article
+          id={topic.id}
+          style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 36px; scroll-margin-top: 90px;"
+        >
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+            <span class="meta-pill" style={`background: rgba(255,255,255,0.06); color: ${topic.badgeColor}; border: 1px solid ${topic.badgeColor}40;`}>
+              Topic {idx + 1} &middot; {topic.tag}
+            </span>
+          </div>
+
+          <h2 style="font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin-bottom: 16px;">
+            {topic.title}
+          </h2>
+
+          <p style="font-size: 1.05rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 24px;">
+            {topic.description}
+          </p>
+
+          <!-- Infographic / Visual Artwork -->
+          {topic.image && (
+            <div style="margin: 24px 0 32px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: #080b12;">
+              <a href={withBase(topic.image)} target="_blank" rel="noopener noreferrer" title="Click to view full resolution infographic">
+                <img
+                  src={withBase(topic.image)}
+                  alt={topic.imageAlt}
+                  style="width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #06080e; display: block;"
+                  loading="lazy"
+                />
+              </a>
+              <div style="padding: 12px 18px; font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.4); display: flex; justify-content: space-between; align-items: center;">
+                <span>{topic.imageAlt}</span>
+                <a href={withBase(topic.image)} target="_blank" rel="noopener noreferrer" style="color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.75rem;">
+                  🔍 Open Full Resolution
+                </a>
+              </div>
+            </div>
+          )}
+
+          {topic.secondaryImage && (
+            <div style="margin: 24px 0 32px; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); background: #080b12;">
+              <a href={withBase(topic.secondaryImage)} target="_blank" rel="noopener noreferrer" title="Click to view full resolution infographic">
+                <img
+                  src={withBase(topic.secondaryImage)}
+                  alt="Spacetime Curvature Explanatory Infographic"
+                  style="width: 100%; aspect-ratio: 16/9; object-fit: contain; background: #06080e; display: block;"
+                  loading="lazy"
+                />
+              </a>
+              <div style="padding: 12px 18px; font-size: 0.8rem; color: var(--text-muted); background: rgba(0,0,0,0.4); display: flex; justify-content: space-between; align-items: center;">
+                <span>Educational Breakdown: How Gravity &amp; Spacetime Curvature Work</span>
+                <a href={withBase(topic.secondaryImage)} target="_blank" rel="noopener noreferrer" style="color: var(--gold-primary); font-family: var(--font-mono); font-size: 0.75rem;">
+                  🔍 Open Full Resolution
+                </a>
+              </div>
+            </div>
+          )}
+
+          <!-- Equation Callout if present -->
+          {topic.equation && (
+            <div style="padding: 16px 20px; background: rgba(56, 189, 248, 0.08); border-left: 3px solid var(--cyan-primary); border-radius: 0 8px 8px 0; margin-bottom: 24px;">
+              <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cyan-primary); font-weight: 700; margin-bottom: 6px;">
+                Governing Equation
+              </div>
+              <div style="font-size: 1.15rem; color: #fff; overflow-x: auto;">
+                $${topic.equation}$$
+              </div>
+              {topic.quote && (
+                <p style="font-size: 0.85rem; font-style: italic; color: #94a3b8; margin-top: 8px;">
+                  {topic.quote}
+                </p>
+              )}
+            </div>
+          )}
+
+          <!-- Key Principles Highlights Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 28px;">
+            {topic.highlights.map((h) => (
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 18px;">
+                <h3 style="font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px;">
+                  {h.title}
+                </h3>
+                <p style="font-size: 0.88rem; color: #94a3b8; line-height: 1.6;">
+                  {h.text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <!-- Series Deep Dive Cross-Links -->
+          <div style="padding-top: 20px; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); font-weight: 700;">
+              Chapters in The Story of Everything:
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              {topic.crossLinks.map((link) => (
+                <a
+                  href={withBase(link.url)}
+                  class="btn-secondary"
+                  style="font-size: 0.8rem; padding: 6px 12px; border-radius: 6px;"
+                >
+                  {link.text} &rarr;
+                </a>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
