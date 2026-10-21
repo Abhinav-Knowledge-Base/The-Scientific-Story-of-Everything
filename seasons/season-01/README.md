@@ -970,7 +970,7 @@ Finale in historical order: 13.8 billion years → stars → elements → Earth 
 | 27 | The Ice Age |
 | 28 | After the Ice: Prehistoric Worlds |
 | 29 | The Cradles of Civilization |
-| 30 | The Axial Age |
+| 30 | [The Axial Age](https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/episodes/season-01/ep-30-the-axial-age/) |
 | 31 | Faiths, Values, and Human Bonds |
 | 32 | How Humans Keep Time |
 | 33 | The Last Five Hundred Years |

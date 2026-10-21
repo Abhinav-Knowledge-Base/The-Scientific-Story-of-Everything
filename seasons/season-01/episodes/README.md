@@ -35,7 +35,7 @@ Phase 1 outlines: [../README.md](../README.md)
 | 27 | [The Ice Age](ep-27-the-ice-age.md) | Detailed |
 | 28 | [After the Ice: Prehistoric Worlds](ep-28-after-the-ice-prehistoric-worlds.md) | Detailed |
 | 29 | [The Cradles of Civilization](ep-29-the-cradles-of-civilization.md) | Detailed |
-| 30 | [The Axial Age](ep-30-the-axial-age.md) | Detailed |
+| 30 | [The Axial Age](ep-30-the-axial-age.md) — [Live Reader](https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/episodes/season-01/ep-30-the-axial-age/) | Detailed |
 | 31 | [Faiths, Values, and Human Bonds](ep-31-faiths-values-and-human-bonds.md) | Detailed |
 | 32 | [How Humans Keep Time](ep-32-how-humans-keep-time.md) | Detailed |
 | 33 | [The Last Five Hundred Years](ep-33-the-last-five-hundred-years.md) | Detailed |

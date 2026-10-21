@@ -2,7 +2,9 @@
 
 **Working title:** *The Story of Everything*  
 **Recurring refrain:** *How Did We Get Here?*  
-**Canonical Phase:** Phase 3 Complete (All 106 Chapters Fully Expanded & Verified)
+**Canonical Phase:** Phase 3 Complete (All 106 Chapters Fully Expanded & Verified)  
+**Live Website:** [https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/](https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/)  
+**Featured Chapter (Season 1, Ep. 30 — The Axial Age):** [https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/episodes/season-01/ep-30-the-axial-age/](https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/episodes/season-01/ep-30-the-axial-age/)
 
 A grand, continuous science storytelling masterwork: **one unbroken causal chain** from the quantum dawn of the early universe to galaxies, stars, nucleosynthesis, planets, geochemical origins of life, Darwinian evolution, hominin emergence, human culture, civilization, science, technology, and the open scientific and existential frontiers ahead.
 
@@ -131,8 +133,11 @@ d:\Miscelaneous\The-Scientific-Story-of-Everything\
 
 ---
 
-## Core References
-
+## Core References & Live Platform
+ 
+* **Live Website (Published on GitHub Pages):** [https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/](https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/)
+* **Featured Episode — The Axial Age:** [https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/episodes/season-01/ep-30-the-axial-age/](https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/episodes/season-01/ep-30-the-axial-age/)
+* **Visual Guide — Interesting Physics:** [https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/interesting-physics/](https://abhinav-knowledge-base.github.io/The-Scientific-Story-of-Everything/interesting-physics/)
 * **Series Guide & Principles:** [`guide.md`](guide.md)
 * **Master Cross-Season Timeline:** [`timeline.md`](timeline.md)
 * **Continuity & Baton Verification:** [`continuity.md`](continuity.md)
